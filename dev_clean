@@ -1,0 +1,9 @@
+#!/bin/sh
+module="dht22"
+device="dht22"
+dev_num=1
+#major=`cat /proc/devices |grep $device |cut -d' ' -f1`
+rm -f /dev/$device[0-$dev_num]
+echo "rmmod $module..."
+rmmod $module.ko
+exit 0
